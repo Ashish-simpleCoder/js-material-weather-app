@@ -1,5 +1,5 @@
 search_input.addEventListener('input',function(e){
-    (!this.value) && (first_appearance.style.display = 'block')
+    (!this.value) && (first_appearance.style.display = 'flex')
 })
 search_btn.addEventListener('click',async(e)=>{
     e.preventDefault()
