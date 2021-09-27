@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://ashish-simplecoder.github.io/js-material-note-app/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,7 @@
   "bugs": {
     "url": "https://github.com/Ashish-simpleCoder/js-material-weather-app/issues"
   },
-  "homepage": "https://github.com/Ashish-simpleCoder/js-material-weather-app#readme"
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
