@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./src/index.js" type="module"></script>
+    <title>Weather App(Vanilla JS)</title>
+</head>
+<body>
+    <header>
+        <h3>City Weather (Vanilla JS)</h3>
+        <button id='theme_btn'>🌞</button>
+    </header>
+    <main>
+        <form id="search_form">
+            <div id="input_container">
+                <input type="text" id='search_input' placeholder="city name...">
+                <button id='search_btn'>search</button>
+            </div>
+            <div id="output_container">
+                <div class="city_results">
+                    <div id="weather_icon_container"><img id='weather_img' src="./img/cloud.png" alt="weather icon"></div>
+                    <div id="details">
+                        <h2>city : <span id="city_name"></span><span id='country_name'>, Indian</span></h2>
+                        <div id="temp_details">
+                            <div id="part1">
+                                <p>temp : <span id="temp_d"></span> &deg;C</p>
+                                <p>feels like : <span id="feels_like_d"></span> &deg;C</p>
+                            </div>
+                            <div id="part2">
+                                <p>humidiy : <span id="humidity_d"></span></p>
+                                <p>pressure : <span id="pressure_d"></span> mb</p>
+                                <p>wind speed : <span id="speed_d"></span> km/h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='first_appearance'><h3>city weather will be appeared here</h3></div>
+                <div id='loaders'>
+                    <div id='loader1'></div>
+                    <div id='loader2'></div>
+                </div>
+                <div id='city_not_found'><h3>city not found</h3></div>
+                <div id='no_internet'><h3>No internet connection. Pls connect to the internet</h3></div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
