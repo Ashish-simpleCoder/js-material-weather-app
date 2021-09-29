@@ -22,12 +22,12 @@
   --prm_90:hsl(152, 100%, 90%);
   --prm_95:hsl(152, 100%, 95%);
   --pad:clamp(0.8rem,1rem,1vw);
-  --body_bg:var(--prm_5);
+  --body_bg:var(--prm_10);
   --input_clr:var(--prm_95);
   --clr:var(--prm_95);
   --border:var(--prm_20);
   --input_bg:black;
-  --output_bg:hsl(144, 95%, 9%);
+  --output_bg:hsl(144, 95%, 3%);
   --no_in:var(--prm_95);
   --details_clr:var(--prm_70);
 }
@@ -37,7 +37,7 @@ body.light_theme {
   --input_clr:var(--prm_10);
   --clr:var(--prm_10);
   --border:var(--prm_20);
-  --input_bg:var(--prm_80);
+  --input_bg:var(--prm_95);
   --output_bg:hsl(150, 29%, 95%);
   --no_in:var(--prm_10);
   --details_clr:var(--prm_10);
@@ -127,8 +127,11 @@ div#input_container input {
   background: var(--input_bg);
   color: var(--input_clr);
   padding: var(--pad);
+  -webkit-box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
   -webkit-transition: background 0.25s ease 0.1s;
   transition: background 0.25s ease 0.1s;
+  margin-right: 0.5rem;
 }
 
 div#input_container button {
@@ -192,6 +195,10 @@ div#details div#temp_details p {
 div#details div#temp_details p span {
   font-weight: 500;
   color: var(--clr);
+}
+
+#part1, #part2, img#weather_img {
+  opacity: 0;
 }
 
 div#first_appearance, div#no_internet, div#city_not_found {
@@ -295,16 +302,16 @@ div#loaders div#loader2 {
   50% {
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
-    opacity: 0;
-    -webkit-transform: translateX(1rem);
-            transform: translateX(1rem);
+    opacity: 1;
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
   }
   100% {
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    opacity: 1;
   }
 }
 
@@ -319,16 +326,16 @@ div#loaders div#loader2 {
   50% {
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
-    opacity: 0;
-    -webkit-transform: translateX(1rem);
-            transform: translateX(1rem);
+    opacity: 1;
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
   }
   100% {
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
+    opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    opacity: 1;
   }
 }
 /*# sourceMappingURL=index.css.map */
