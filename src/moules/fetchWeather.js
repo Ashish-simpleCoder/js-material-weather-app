@@ -17,6 +17,7 @@ export default async function fetchWeather(search_input){
             part2.style.animation = 'animate_p 0.5s 0.2s ease forwards'
 
             if(status.includes(weather_stauts)){
+                console.log(weather_stauts)
                 if(weather_stauts === 'rain') weather_img.src = './img/rain.png'
                 if(weather_stauts === 'haze' || weather_stauts === 'clouds' || weather_stauts === 'mist')
                      weather_img.src = './img/cloudy.png'

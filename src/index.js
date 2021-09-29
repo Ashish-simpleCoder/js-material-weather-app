@@ -9,6 +9,7 @@ search_btn.addEventListener('click',async(e)=>{
         part1.style.animation = ''
         part2.style.animation = ''
         weather_img.style.animation = ''
+        weather_img.src=''
         const fetchWeather = await import('./moules/fetchWeather.js')
         fetchWeather.default(search_input.value)
     }else{
