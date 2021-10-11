@@ -8,9 +8,9 @@
     <script src="./src/index.js" type="module"></script>
     <title>Weather App(Vanilla JS)</title>
 </head>
-<body class=''>
+<body class='light_theme'>
     <header>
-        <h3>City Weather (Vanilla JS)</h3>
+        <h3><img src='./icon.png'/>City Weather (Vanilla JS)</h3>
         <button id='theme_btn'>🌞</button>
     </header>
     <main>
@@ -23,16 +23,16 @@
                 <div class="city_results">
                     <div id="weather_icon_container"><img id='weather_img' src="./img/cloud.png" alt="weather icon"></div>
                     <div id="details">
-                        <h2>city : <span id="city_name"></span><span id='country_name'>, Indian</span></h2>
+                        <h2>city : <span id="city_name"></span><span id='country_name'></span></h2>
                         <div id="temp_details">
                             <div id="part1">
-                                <p>temp : <span id="temp_d"></span> &deg;C</p>
-                                <p>feels like : <span id="feels_like_d"></span> &deg;C</p>
+                                <p><img src='./img/temp.png' class='temp'/>temp : <span id="temp_d"></span> &deg;C</p>
+                                <p><img src='./img/like.png' class='temp'/>feels like : <span id="feels_like_d"></span> &deg;C</p>
                             </div>
                             <div id="part2">
-                                <p>humidiy : <span id="humidity_d"></span></p>
-                                <p>pressure : <span id="pressure_d"></span> mb</p>
-                                <p>wind speed : <span id="speed_d"></span> km/h</p>
+                                <p><img src='./img/humidity.png' class='temp'/>humidiy : <span id="humidity_d"></span></p>
+                                <p><img src='./img/pressure.png' class='temp'/>pressure : <span id="pressure_d"></span> mb</p>
+                                <p><img src='./img/tornado.png' class='temp'/>wind speed : <span id="speed_d"></span> km/h</p>
                             </div>
                         </div>
                     </div>
