@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: cursive,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 :root{
     --prm_clr:rgb(152, 128, 100);
@@ -20,6 +20,7 @@
     --prm_85:hsl(152, 100%, 85%);
     --prm_90:hsl(152, 100%, 90%);
     --prm_95:hsl(152, 100%, 95%);
+    --prm_100:hsl(152, 100%, 100%);
 
 
     --pad:clamp(0.8rem,1rem,1vw);
@@ -27,6 +28,7 @@
     --body_bg:var(--prm_10);
     --input_clr:var(--prm_95);
     --clr:var(--prm_95);
+    --clr2:var(--prm_80);
     --border:var(--prm_20);
     --input_bg:black;
     --output_bg:hsl(144, 95%, 3%);
@@ -34,12 +36,13 @@
     --details_clr:var(--prm_70);
 }
 body.light_theme{
-    --body_bg:var(--prm_90);
+    --body_bg:var(--prm_95);
     --input_clr:var(--prm_10);
     --clr:var(--prm_10);
+    --clr2:var(--prm_20);
     --border:var(--prm_20);
-    --input_bg:var(--prm_95);
-    --output_bg:hsl(150, 29%, 95%);
+    --input_bg:var(--prm_100);
+    --output_bg:hsl(0, 0%, 100%);
     --no_in:var(--prm_10);
     --details_clr:var(--prm_10);
 }
@@ -53,21 +56,20 @@ body{
 }
 button{
     border-radius:50%;
-    border:1px solid var(--border);
+    border:none;
     padding:clamp(0.5rem,0.8rem,0.8vw);
     font-size:clamp(1.5rem,1.8rem,1.8vw);
     transition:transform 0.3s ease;
     cursor: pointer;
     background:var(--prm_30);
+    transform-style: preserve-3d;
     &:active{
         transform:perspective(1rem) scale(1.2) translateY(0.3rem) translateZ(-1rem) rotateX(-25deg);
     }
 }
-header{
-    padding:clamp(0.7rem,1.2rem,1.2vw) clamp(2rem,4rem,4vw);
-}
+
 h3{
-    font-size:clamp(1.8rem,2rem,2vw);
+    font-size:clamp(2rem,2.2rem,2.2vw);
     color:var(--clr);
     font-weight:500;
 }
@@ -77,7 +79,12 @@ header{
     justify-content: space-between;
     align-items:center;
     border-bottom:1px solid var(--border);
+    padding:clamp(0.7rem,1.2rem,1.2vw) clamp(2rem,4rem,4vw);
 
+    img{
+        width:clamp(3rem,3.2rem,3.2vw);
+        margin-right: 1rem;
+    }
 }
 main{
     display: flex;
@@ -118,8 +125,8 @@ div#output_container{
     border-radius:0.3rem;
     height: clamp(40rem,45rem,45vw);
     position: relative;
-    padding:var(--pad);
-    box-shadow:0 0.5rem 0.8rem rgba(0,0,0,0.5);
+    padding:clamp(1rem,1.5rem,1.5vw);
+    box-shadow:0 0.3rem 0.8rem rgba(0,0,0,0.2);
 }
 
 div#weather_icon_container{
@@ -134,13 +141,19 @@ div#weather_icon_container{
 div#details{
     h2{
         color:var(--details_clr);
-        font-size:clamp(1.7rem,1.9rem,1.9vw);
+        font-size:clamp(1.8rem,2rem,2vw);
         margin:1rem 0 clamp(2rem,3rem,3vw);
-        font-weight: bold;
+        color:var(--clr2);
+        font-weight: 500;
         span{
-            font-weight: 500;
+            font-weight: 400;
             color:var(--clr);
         }
+    }
+    img{
+        width:clamp(1.8rem,2rem,2vw);
+        height:clamp(1.8rem,2rem,2vw);
+        margin-right:1rem;
     }
 
     div#temp_details{
@@ -148,10 +161,9 @@ div#details{
         width:100%;
         justify-content: space-between;
         p{
-            font-weight: bold;
-            font-size: clamp(1.5rem,1.7rem,1.7vw);
+            color:var(--clr2);
+            font-size: clamp(1.5rem,1.5rem,1.5vw);
             margin:clamp(1rem,1.5rem,1.5vw) 0;
-            color:var(--details_clr);
             span{
                 font-weight: 500;
                 color:var(--clr);
@@ -159,9 +171,7 @@ div#details{
         }
     }
 }
-#part1,#part2,img#weather_img{
-    opacity: 0;
-}
+
 
 div#first_appearance,div#no_internet,div#city_not_found{
     width:100%;
@@ -217,18 +227,18 @@ div#loaders{
 
 @keyframes animate_p{
     0%{
-        animation-timing-function: ease;
         opacity:0;
         transform:translateX(-10rem);
     }
     50%{
-        animation-timing-function: ease-in;
         opacity:1;
         transform:translateX(2rem);
     }
     100%{
-        animation-timing-function: ease-out;
         opacity:1;
         transform:translateX(0);
     }
+}
+#part1,#part2,img#weather_img{
+    opacity: 0;
 }
